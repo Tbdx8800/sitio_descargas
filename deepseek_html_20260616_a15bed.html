@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sitio oficial de descarga de RealPhone & Accesorios PDV. Descarga el sistema POS, guías de usuario, administrador y tester. Versiones disponibles: 0.1.0, 1.0 y 1.5.0.">
+    <meta name="keywords"
+        content="RealPhone PDV, descarga POS, versiones POS, guía usuario, guía administrador, guía tester, RealPhone & Accesorios">
+    <meta name="author" content="RealPhone & Accesorios">
+    <meta name="robots" content="index, follow">
+    <title>Descargas | RealPhone & Accesorios PDV</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --telcel-blue: #0033A0;
+            --telcel-blue-dark: #002277;
+            --white: #FFFFFF;
+            --dark-gray: #2C3E50;
+            --medium-gray: #5a6c7d;
+            --light-gray: #f4f6f9;
+            --border-color: #e0e5ec;
+            --green-accent: #00A86B;
+            --green-accent-dark: #008a56;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.1);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --transition: 0.25s ease;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--light-gray);
+            color: var(--dark-gray);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 24px 16px;
+        }
+
+        /* Contenedor principal */
+        .page-container {
+            width: 100%;
+            max-width: 720px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 36px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin: 0 auto;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .page-container.hidden {
+            display: none;
+        }
+
+        /* Header / Logo */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .logo-placeholder {
+            width: 52px;
+            height: 52px;
+            background: var(--telcel-blue);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.3rem;
+            letter-spacing: -1px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 51, 160, 0.25);
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--dark-gray);
+            letter-spacing: -0.3px;
+            line-height: 1.3;
+        }
+
+        .logo-text span {
+            display: block;
+            font-weight: 400;
+            font-size: 0.75rem;
+            color: var(--medium-gray);
+            letter-spacing: 0.3px;
+        }
+
+        /* Bienvenida */
+        .welcome-section {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .welcome-section h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            letter-spacing: -0.3px;
+            line-height: 1.3;
+        }
+
+        .welcome-section .highlight {
+            color: var(--telcel-blue);
+        }
+
+        .welcome-section p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .divider {
+            width: 50px;
+            height: 3px;
+            background: var(--telcel-blue);
+            border-radius: 3px;
+            margin: 4px auto 0;
+        }
+
+        /* Botones de descarga */
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .download-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 16px;
+            border-radius: var(--radius-md);
+            background: var(--white);
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            font-family: var(--font-family);
+            letter-spacing: 0.2px;
+            position: relative;
+            outline: none;
+        }
+
+        .download-btn:hover,
+        .download-btn:focus-visible {
+            border-color: var(--telcel-blue);
+            background: #f8faff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 51, 160, 0.1);
+        }
+
+        .download-btn:focus-visible {
+            box-shadow: 0 0 0 4px rgba(0, 51, 160, 0.2);
+        }
+
+        .download-btn i {
+            font-size: 2rem;
+            color: var(--telcel-blue);
+            transition: var(--transition);
+        }
+
+        .download-btn:hover i {
+            color: var(--telcel-blue-dark);
+            transform: scale(1.1);
+        }
+
+        .download-btn .btn-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .download-btn .btn-sublabel {
+            font-weight: 400;
+            font-size: 0.7rem;
+            color: var(--medium-gray);
+            margin-top: -4px;
+        }
+
+        .btn-pos {
+            border-color: var(--green-accent);
+            background: #f6fffb;
+        }
+
+        .btn-pos i {
+            color: var(--green-accent);
+        }
+
+        .btn-pos:hover {
+            border-color: var(--green-accent-dark);
+            background: #edfff7;
+        }
+
+
+
+        /* Footer */
+        .footer-note {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--medium-gray);
+            line-height: 1.6;
+            border-top: 1px solid var(--border-color);
+            padding-top: 18px;
+            margin-top: 8px;
+        }
+
+        .footer-note strong {
+            color: var(--dark-gray);
+        }
+
+        /* --- PÁGINA DE VERSIONES --- */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: none;
+            border: 2px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            color: var(--dark-gray);
+            transition: var(--transition);
+            font-family: var(--font-family);
+            align-self: flex-start;
+        }
+
+        .back-btn:hover {
+            border-color: var(--telcel-blue);
+            color: var(--telcel-blue);
+            background: #f8faff;
+        }
+
+        .versions-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 4px;
+        }
+
+        .versions-sub {
+            text-align: center;
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .version-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .version-card {
+            background: #ffffff;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 20px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .version-card:hover {
+            border-color: #c5d0e0;
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .version-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .version-tag {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--telcel-blue);
+            letter-spacing: -0.3px;
+        }
+
+        .version-date {
+            font-size: 0.75rem;
+            color: var(--medium-gray);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .version-desc {
+            font-size: 0.82rem;
+            color: #4a5568;
+            max-width: 320px;
+            line-height: 1.4;
+        }
+
+        .version-download-btn {
+            background: var(--telcel-blue);
+            color: #fff;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-family);
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .version-download-btn:hover {
+            background: var(--telcel-blue-dark);
+            transform: scale(1.03);
+            box-shadow: 0 6px 18px rgba(0, 51, 160, 0.25);
+        }
+
+        .version-download-btn i {
+            font-size: 1rem;
+        }
+
+
+
+        @media (max-width: 500px) {
+            .page-container {
+                padding: 24px 16px;
+                gap: 24px;
+            }
+
+            .welcome-section h1,
+            .versions-title {
+                font-size: 1.4rem;
+            }
+
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+
+            .version-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .version-download-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ========== PÁGINA PRINCIPAL ========== -->
+    <div class="page-container" id="mainPage">
+        <!-- Header / Logo -->
+        <div class="header">
+            <div class="logo-placeholder" aria-hidden="true">RP</div>
+            <div class="logo-text">
+                RealPhone <span>&amp; Accesorios</span>
+            </div>
+        </div>
+
+        <!-- Bienvenida -->
+        <div class="welcome-section">
+            <h1>Bienvenido al sitio de descarga de <span class="highlight">RealPhone&amp;Accesorios PDV</span></h1>
+            <p>Descarga el sistema POS, guías de usuario, administrador y tester en un solo lugar.</p>
+            <div class="divider"></div>
+        </div>
+
+        <!-- Botones de descarga -->
+        <div class="download-grid">
+            <button class="download-btn btn-pos" id="btnPos" aria-label="Ver versiones del sistema POS">
+                <i class="fas fa-cash-register" aria-hidden="true"></i>
+                <span class="btn-label">Descargar POS</span>
+                <span class="btn-sublabel">Sistema principal · Versiones</span>
+            </button>
+
+        </div>
+
+
+
+        <!-- Footer -->
+        <div class="footer-note">
+            <strong>RealPhone &amp; Accesorios</strong> &copy; 2025 · Todos los derechos reservados.<br>
+            Sistema PDV con respaldo <strong>Telcel</strong>.
+        </div>
+    </div>
+
+    <!-- ========== PÁGINA DE VERSIONES ========== -->
+    <div class="page-container hidden" id="versionsPage">
+        <button class="back-btn" id="backToMainBtn" aria-label="Volver a la página principal">
+            <i class="fas fa-arrow-left"></i> Volver al inicio
+        </button>
+
+        <div class="welcome-section" style="margin-top: 8px;">
+            <h2 class="versions-title">Versiones disponibles de RealPOS</h2>
+            <p class="versions-sub">Selecciona la versión que deseas descargar</p>
+            <div class="divider"></div>
+        </div>
+
+        <div class="version-list">
+            <!-- Versión 0.1.0 -->
+            <div class="version-card">
+                <div class="version-info">
+                    <span class="version-tag">v0.1.0</span>
+                    <span class="version-date"><i class="far fa-calendar-alt"></i> 05 noviembre 2024</span>
+                    <p class="version-desc">Versión beta inicial. Funcionalidades básicas de punto de venta y control de
+                        inventario.</p>
+                </div>
+                <!-- 
+                ⚠️ INSERTA AQUÍ EL ENLACE EXTERNO PARA v0.1.0 
+                -->
+                <a href="https://tbdx8800.github.io/pos-testt/pos/" target="_blank" rel="noopener noreferrer"
+                    class="version-download-btn">
+                    <i class="fas fa-external-link-alt"></i> Ir a v0.1.0
+                </a>
+            </div>
+
+            <!-- Versión 1.0 -->
+            <div class="version-card">
+                <div class="version-info">
+                    <span class="version-tag">v1.0</span>
+                    <span class="version-date"><i class="far fa-calendar-alt"></i> 10 enero 2025</span>
+                    <p class="version-desc">Primera versión estable. Módulo de reparaciones, apartados y punto de venta
+                        completo.</p>
+                </div>
+                <!-- 
+                ⚠️ INSERTA AQUÍ EL ENLACE A TU CARPETA DE GOOGLE DRIVE 
+                Reemplaza el enlace por el link real de tu carpeta.
+                -->
+                <a href="https://drive.google.com/drive/folders/1z1--I7fD8d1bqt67eYlhFBUD8HZA7lzv?usp=drive_link"
+                    target="_blank" rel="noopener noreferrer" class="version-download-btn">
+                    <i class="fas fa-folder-open"></i> Descargar v1.0 (Drive)
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <strong>RealPhone &amp; Accesorios</strong> &copy; 2025 · Todas las versiones incluyen soporte técnico para
+            clientes Telcel.
+        </div>
+    </div>
+
+
+
+    <script>
+        (function () {
+            // --- Referencias a páginas ---
+            const mainPage = document.getElementById('mainPage');
+            const versionsPage = document.getElementById('versionsPage');
+
+
+
+            // --- Navegación entre páginas ---
+            function showMainPage() {
+                mainPage.classList.remove('hidden');
+                versionsPage.classList.add('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            function showVersionsPage() {
+                mainPage.classList.add('hidden');
+                versionsPage.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Botón "Descargar POS" -> abre página de versiones
+            document.getElementById('btnPos').addEventListener('click', showVersionsPage);
+
+            // Botón "Volver al inicio" -> regresa a página principal
+            document.getElementById('backToMainBtn').addEventListener('click', showMainPage);
+
+
+
+
+        })();
+    </script>
+</body>
+
+</html>
